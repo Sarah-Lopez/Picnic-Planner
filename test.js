@@ -1,10 +1,10 @@
 
-const userSearch 
-const diet
-const health
-const excludedIngredients
-const minCalorie
-const maxCalorie
+const userSearch = "cookie";
+const diet = "low-fat";
+const health = "peanut-free";
+const excludedIngredients = "cream-cheese";
+const minCalorie = "50";
+const maxCalorie = "300";
 
 const queryURL = "https://api.edamam.com/search?q=" + userSearch + "&app_id=ff5eea8f&app_key=60ed34c1d6d2b78f3933b4438a735801&from=1&to=2&calories=" + minCalorie + "-" + maxCalorie + "&health=" + health + "&diet=" + diet + "&excluded=" + excludedIngredients;
 //"https://api.giphy.com/v1/gifs/search?q=" +
@@ -28,7 +28,7 @@ method: "GET"
 
 })
 
-$(someID).on("click", function(event){
+$("#mainSubmit").on("click", function(event){
     event.preventDefault();
 
 })
