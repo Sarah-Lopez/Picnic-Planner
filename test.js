@@ -1,5 +1,5 @@
 
-
+//hi
 const queryURL = "https://api.edamam.com/search?q=chicken&app_id=ff5eea8f&app_key=60ed34c1d6d2b78f3933b4438a735801&ingr=4";
 //"https://api.giphy.com/v1/gifs/search?q=" +
 //animal + "&api_key=dc6zaTOxFJmzC&limit=10";
