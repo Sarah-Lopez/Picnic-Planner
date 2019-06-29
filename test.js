@@ -1,5 +1,5 @@
-
-const userSearch = "cookie";
+function firstTry() {
+const userSearch = [""];
 const diet = "low-fat";
 const health = "peanut-free";
 const excludedIngredients = "cream-cheese";
@@ -27,8 +27,15 @@ method: "GET"
     }
 
 })
+}
 
 $("#mainSubmit").on("click", function(event){
     event.preventDefault();
 
+    const mySearch = $("#exampleInputEmail1").val().trim();
+    userSearch.push(mySearch);
+    console.log(userSearch);
+
 })
+
+$(document).on("click", ".btn btn-primary", firstTry);
