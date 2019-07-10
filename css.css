@@ -55,7 +55,15 @@
 .scrollBar{
   background-color:#f7f7f9;
   width: 100%;
-  height: 300px;
+  height: 400px;
+  overflow: auto;
+  border: 3px solid coral;
+}
+
+.scrollBarC{
+  background-color:#f7f7f9;
+  width: 100%;
+  height: 500px;
   overflow: auto;
   border: 3px solid coral;
 }
@@ -63,3 +71,17 @@
 .card{
 height: 110%;
 }
+
+/* 
+form {
+  margin-top: 20px;
+}
+#calendartitle, #calendartitle2 {
+  font-display:
+}
+/* body {
+  background-color: rgb(171, 230, 200); */
+}
+.text {
+  background-color: white;
+} */
