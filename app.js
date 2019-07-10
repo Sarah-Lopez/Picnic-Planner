@@ -1,5 +1,5 @@
 
-
+// I have no idea why we need the return string below
 /**
  @returns {string}
  * 
@@ -65,11 +65,16 @@ function updatePage(edamamRecipe) {
 
         // Append the article
         $articleList.append($articleListItem);
+        $(".image").on("click", function () {
+            window.open(recipeV.url);
+        })
     }
 }
 
+
 function clear() {
     $("#article-section").empty();
+    $("#recipeDiv").empty();
 }
 
 //Show recipes based on seasons on click
