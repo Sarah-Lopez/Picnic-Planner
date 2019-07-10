@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation-float.min.css"
+        integrity="sha256-sP0p6J7SbJGiJ2gkdY1nkVsLgdwiFN2kI370lU+zacQ= sha384-yZLxxcD8nfiSt1qfKJWwHwtkL58WZDTlkBnZN60qr3ZS35+LDsmUF2JHLxdyZ+KU sha512-Z3WbpfWFSsK2dBvoSYZnMvPmxSJUa5cxj3TYlmyj6cq8IXy7iB2nlUk+jjms8gnz4HmpQk/yhRSlRzW7keoSlg=="
+        crossorigin="anonymous">
+
+    <title>Calendar</title>
+</head>
+
+<body>
+        <!-- <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+        <script>
+          var firebaseConfig = {
+            apiKey: "AIzaSyAqYx3WtlzMIwibAwTotsysPc8Ld_xv1xQ",
+            authDomain: "picnic-calendar.firebaseapp.com",
+            databaseURL: "https://picnic-calendar.firebaseio.com",
+            projectId: "picnic-calendar",
+            storageBucket: "picnic-calendar.appspot.com",
+            messagingSenderId: "1085099855542",
+            appId: "1:1085099855542:web:51b8acc07fbb28c7"
+          };
+          firebase.initializeApp(firebaseConfig);
+        </script> -->
+    <h1>
+        <center>Recipe Planner</center>
+    </h1>
+    <h2>
+        <center>Paste your favorite recipe links into the desired days below:</center>
+    </h2>
+
+    <div id="container"></div>
+    <div class="row small-up-3 medium-up-5 large-up-7">
+        <div class="column" style="border:1px solid #000000"><strong>Monday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Tuesday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Wednesday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Thursday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Friday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Saturday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Sunday</strong></div>
+    </div>
+    <div class="row small-up-3 medium-up-5 large-up-7">
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input1">
+            </form>
+            <input type="submit" onclick="showInput(1);"><br />
+            <div id='text1' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear1" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input2">
+            </form>
+            <input type="submit" onclick="showInput(2);"><br />
+            <div id='text2' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear2" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input3">
+            </form>
+            <input type="submit" onclick="showInput(3);"><br />
+            <div id='text3' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear3" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input4">
+            </form>
+            <input type="submit" onclick="showInput(4);"><br />
+            <div id='text4' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear4" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input5">
+            </form>
+            <input type="submit" onclick="showInput(5);"><br />
+            <div id='text5' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear5" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input6">
+            </form>
+            <input type="submit" onclick="showInput(6);"><br />
+            <div id='text6' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear6" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input7">
+            </form>
+            <input type="submit" onclick="showInput(7);"><br />
+            <div id='text7' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear7" class="clear button">Clear</button>
+        </div>
+    </div>
+    <div class="row small-up-3 medium-up-5 large-up-7">
+        <div class="column" style="border:1px solid #000000"><strong>Monday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Tuesday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Wednesday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Thursday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Friday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Saturday</strong></div>
+        <div class="column" style="border:1px solid #000000"><strong>Sunday</strong></div>
+    </div>
+    <div class="row small-up-3 medium-up-5 large-up-7">
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input8">
+            </form>
+            <input type="submit" onclick="showInput(8);"><br />
+            <div id='text8' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear8" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input9">
+            </form>
+            <input type="submit" onclick="showInput(9);"><br />
+            <div id='text9' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear9" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input10">
+            </form>
+            <input type="submit" onclick="showInput(10);"><br />
+            <div id='text10' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear10" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input11">
+            </form>
+            <input type="submit" onclick="showInput(11);"><br />
+            <div id="text11" style="overflow: auto">
+                <ul></ul>
+            </div>
+            <!-- new button -->
+            <button type="button" id= "clear11" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input12">
+            </form>
+            <input type="submit" onclick="showInput(12);"><br />
+            <div id='text12' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear12" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input13">
+            </form>
+            <input type="submit" onclick="showInput(13);"><br />
+            <div id='text13' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear13" class="clear button">Clear</button>
+        </div>
+        <div class="column" style="border:1px solid #000000">
+            <form>
+                <input type="text" id="user_input14">
+            </form>
+            <input type="submit" onclick="showInput(14);"><br />
+            <div id='text14' style="overflow: auto">
+                <ul></ul>
+            </div>
+            <button type="button" id= "clear14" class="clear button">Clear</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript">
+
+//Submit link and display on page, append links to previous links
+        function showInput(number) {
+            let newDiv= document.createElement ("li")
+            let recipeVal=  document.getElementById("user_input" + number).value
+            let recipeLi= $("<li>")
+            recipeLi.text(recipeVal);
+            console.log($('#text' + number + ' ul' ))
+            $('#text' + number + ' ul' ).append(recipeLi);
+        }
+
+        //Clear buttons
+        $("#clear1").on("click", function () {
+            $("#text1").empty();
+        });
+        $("#clear2").on("click", function () {
+            $("#text2").empty();
+        });
+        $("#clear3").on("click", function () {
+            $("#text3").empty();
+        });
+        $("#clear4").on("click", function () {
+            $("#text4").empty();
+        });
+        $("#clear5").on("click", function () {
+            $("#text5").empty();
+        });
+        $("#clear6").on("click", function () {
+            $("#text6").empty();
+        });
+        $("#clear7").on("click", function () {
+            $("#text7").empty();
+        });
+        $("#clear8").on("click", function () {
+            $("#text8").empty();
+        });
+        $("#clear9").on("click", function () {
+            $("#text9").empty();
+        });
+        $("#clear10").on("click", function () {
+            $("#text10").empty();
+        });
+        $("#clear11").on("click", function () {
+            $("#text11").empty();
+        });
+        $("#clear12").on("click", function () {
+            $("#text12").empty();
+        });
+        $("#clear13").on("click", function () {
+            $("#text13").empty();
+        });
+        $("#clear14").on("click", function () {
+            $("#text14").empty();
+        });
+    </script>
+
+</body>
+
+</html>
