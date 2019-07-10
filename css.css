@@ -72,16 +72,15 @@
 height: 110%;
 }
 
-/* 
-form {
+.form {
   margin-top: 20px;
 }
-#calendartitle, #calendartitle2 {
-  font-display:
+#calendartitle {
+  font-family: "Times New Roman", Times, serif;
 }
-/* body {
-  background-color: rgb(171, 230, 200); */
+
+
+
+#calendartitle2 {
+  font-family: "Times New Roman", Times, serif;
 }
-.text {
-  background-color: white;
-} */
