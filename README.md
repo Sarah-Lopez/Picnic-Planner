@@ -1,4 +1,4 @@
-# Project-One
+# Picnic-Planner
 
 Uses HTML, CSS, Javascript, Jquery, Ajax, Bootstrap, Edamam's Recipe Search API, and OpenWeatherMap Weather API.
 
